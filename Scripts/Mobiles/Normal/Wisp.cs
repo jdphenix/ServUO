@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server.Factions;
 using Server.Items;
 using Server.Misc;
@@ -83,8 +83,6 @@ namespace Server.Mobiles
                 return TimeSpan.FromSeconds(1.0);
             }
         }
-
-        public override TribeType Tribe { get { return TribeType.Fey; } }
 
         public override OppositionGroup OppositionGroup
         {

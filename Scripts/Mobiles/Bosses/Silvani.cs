@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace Server.Mobiles
 {
@@ -46,8 +46,6 @@ namespace Server.Mobiles
             : base(serial)
         {
         }
-
-        public override TribeType Tribe { get { return TribeType.Fey; } }
 
         public override OppositionGroup OppositionGroup
         {

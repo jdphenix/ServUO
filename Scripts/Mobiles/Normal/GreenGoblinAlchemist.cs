@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -123,8 +123,6 @@ namespace Server.Mobiles
                 return 1;
             }
         }
-
-        public override TribeType Tribe { get { return TribeType.GreenGoblin; } }
 
         //public override bool IsEnemy( Mobile m )
         //{

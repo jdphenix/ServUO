@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server.Engines.CannedEvil;
 using Server.Items;
 
@@ -135,8 +135,6 @@ namespace Server.Mobiles
                 return Core.SE;
             }
         }
-
-        public override TribeType Tribe { get { return TribeType.Fey; } }
 
         public override OppositionGroup OppositionGroup
         {

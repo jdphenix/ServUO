@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -78,8 +78,6 @@ namespace Server.Mobiles
                 return false;
             }
         }
-
-        public override TribeType Tribe { get { return TribeType.Savage; } }
 
         public override OppositionGroup OppositionGroup
         {
