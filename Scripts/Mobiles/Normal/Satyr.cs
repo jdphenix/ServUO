@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Server.Items;
 
@@ -50,8 +50,6 @@ namespace Server.Mobiles
                 this.PackItem(Loot.RandomScroll(0, Loot.ArcanistScrollTypes.Length, SpellbookType.Arcanist));
             }
         }
-
-        public override TribeType Tribe { get { return TribeType.Fey; } }
 
         public override OppositionGroup OppositionGroup
         {

@@ -1007,30 +1007,19 @@ namespace Server.Mobiles
         public virtual bool IsMilitiaFighter { get { return false; } }
 
         // Tribe Opposition stuff
-        public virtual TribeType Tribe{ get{ return TribeType.None ; } } // What opposition list am I in?
+	    public virtual string Tribe
+	    {
+		    get { return World.TribeHandler.MemberOf(GetType()); }
+	    }
 
         public virtual bool IsTribeEnemy(Mobile m)
         {
-            // Target must be BaseCreature
-            if (!(m is BaseCreature))
-            {
-                return false;
-            }
+	        var creature = m as BaseCreature;
 
-            BaseCreature c = (BaseCreature)m;
-
-            switch(Tribe)
-            {
-                case TribeType.Terathan: return (c.Tribe == TribeType.Ophidian);
-                case TribeType.Ophidian: return (c.Tribe == TribeType.Terathan);
-                case TribeType.Savage: return (c.Tribe == TribeType.Orc);
-                case TribeType.Orc: return (c.Tribe == TribeType.Savage);
-                case TribeType.Fey: return (c.Tribe == TribeType.Undead);
-                case TribeType.Undead: return (c.Tribe == TribeType.Fey);
-                case TribeType.GrayGoblin: return (c.Tribe == TribeType.GreenGoblin);
-                case TribeType.GreenGoblin: return (c.Tribe == TribeType.GrayGoblin);
-                default: return false;
-            }
+	        return creature != null &&
+	               World.TribeHandler
+		               .Does(Tribe)
+		               .Oppose(creature.Tribe);
         }
 
         #region Friends
@@ -1065,7 +1054,7 @@ namespace Server.Mobiles
 		{
 			if (Core.TOL)
 			{
-				if (Tribe != TribeType.None && IsTribeEnemy(m))
+				if (IsTribeEnemy(m))
 				{
 					return false;
 				}
@@ -1157,7 +1146,7 @@ namespace Server.Mobiles
 
 			if (Core.TOL)
 			{
-				if (Tribe != TribeType.None && IsTribeEnemy(m))
+				if (IsTribeEnemy(m))
 				{
 					return true;
 				}

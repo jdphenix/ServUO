@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - GreenGoblinScout.cs
 // **********
@@ -55,9 +55,6 @@ namespace Server.Mobiles
 		public GreenGoblinScout(Serial serial)
 			: base(serial)
 		{ }
-
-
-        public override TribeType Tribe { get { return TribeType.GreenGoblin; } }
 
 		public override bool CanRummageCorpses { get { return true; } }
 		public override int Meat { get { return 1; } }

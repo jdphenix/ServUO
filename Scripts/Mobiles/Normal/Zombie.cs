@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -91,8 +91,6 @@ namespace Server.Mobiles
                 return Poison.Regular;
             }
         }
-
-        public override TribeType Tribe { get { return TribeType.Undead; } }
 
         public override OppositionGroup OppositionGroup
         {

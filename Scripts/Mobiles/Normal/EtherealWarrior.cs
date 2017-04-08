@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server.Gumps;
 
 namespace Server.Mobiles 
@@ -64,8 +64,6 @@ namespace Server.Mobiles
                 return Core.AOS ? 5 : 0;
             }
         }
-
-        public override TribeType Tribe { get { return TribeType.Fey; } }
 
         public override OppositionGroup OppositionGroup
         {

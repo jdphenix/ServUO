@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - World.cs
 // **********
@@ -74,6 +74,8 @@ namespace Server
 		public static Dictionary<Serial, Item> Items { get { return m_Items; } }
 
 		public static Dictionary<CustomSerial, SaveData> Data { get { return _Data; } }
+
+        public static TribeHandler TribeHandler { get; } = new TribeHandler();
 
 		public static bool OnDelete(IEntity entity)
 		{
